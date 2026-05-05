@@ -1,0 +1,22 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "__STATEMENT_SID__",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "logging.s3.amazonaws.com"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "__LOG_OBJECT_RESOURCE__",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "__SOURCE_BUCKET_ARN__"
+        },
+        "StringEquals": {
+          "aws:SourceAccount": "__ACCOUNT_ID__"
+        }
+      }
+    }
+  ]
+}

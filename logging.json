@@ -1,0 +1,6 @@
+{
+	"LoggingEnabled": {
+		"TargetBucket": "__TARGET_BUCKET__",
+		"TargetPrefix": "__TARGET_PREFIX__"
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "Rules": [
+    {
+      "ID": "ManageCurrentObjectLifecycle",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": ""
+      },
+      "AbortIncompleteMultipartUpload": {
+        "DaysAfterInitiation": 7
+      },
+      "Transitions": [
+        {
+          "Days": 60,
+          "StorageClass": "GLACIER"
+        }
+      ],
+      "Expiration": {
+        "Days": 365
+      }
+    },
+    {
+      "ID": "ManageNoncurrentObjectLifecycle",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": ""
+      },
+      "NoncurrentVersionTransitions": [
+        {
+          "NoncurrentDays": 60,
+          "StorageClass": "GLACIER"
+        }
+      ],
+      "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 180
+      }
+    }
+  ]
+}

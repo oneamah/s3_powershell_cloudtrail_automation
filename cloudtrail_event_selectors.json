@@ -1,0 +1,25 @@
+[
+  {
+    "Name": "S3ObjectEvents",
+    "FieldSelectors": [
+      {
+        "Field": "eventCategory",
+        "Equals": [
+          "Data"
+        ]
+      },
+      {
+        "Field": "resources.type",
+        "Equals": [
+          "AWS::S3::Object"
+        ]
+      },
+      {
+        "Field": "resources.ARN",
+        "StartsWith": [
+          "__DATA_BUCKET_ARN__"
+        ]
+      }
+    ]
+  }
+]
